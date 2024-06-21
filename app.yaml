@@ -1,0 +1,10 @@
+runtime: python39
+entrypoint: gunicorn -b :$PORT app:app
+
+env_variables:
+  BUCKET_NAME: "my-app-bucket2"
+  IMAGE_NAME: "myimage.jpg"
+
+handlers:
+- url: /.*
+  script: auto
